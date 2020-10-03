@@ -1,23 +1,28 @@
 ﻿// Number Swapping.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include <array>
 #include <ctime>
 #include <iostream>
 #include <string>
 #include <utility>
+#include <vector>
 using namespace std;
 
 int main()
 {
-	const int swapTimes = 5;
-	const int len = 5;
-	array<string, len> seq;
-	array<string, len> ans;
+	vector<string> seq;
+	vector<string> ans;
+	int len;
+	cout << "Enter length:" << endl;
+	cin >> len;
+	cout << endl;
+	int swapTimes = len;
 	cout << "Enter a sequence:" << endl;
-	for (auto& i : seq)
+	for (int i = 0; i < len; i++)
 	{
-		cin >> i;
+		string item;
+		cin >> item;
+		seq.push_back(item);
 	}
 	cout << endl;
 	cout << "Original sequence:" << endl;
@@ -35,9 +40,11 @@ int main()
 		cout << i + 1 << ". Swap item " << item1 + 1 << " and item " << item2 + 1 << "." << endl << endl;
 	}
 	cout << "What is the current sequence?" << endl;
-	for (auto& i : ans)
+	for (int i = 0; i < len; i++)
 	{
-		cin >> i;
+		string item;
+		cin >> item;
+		ans.push_back(item);
 	}
 	cout << endl;
 	if (ans == seq)
