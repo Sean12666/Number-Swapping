@@ -6,6 +6,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <Windows.h>
 using namespace std;
 
 int main()
@@ -17,6 +18,7 @@ int main()
 	cin >> len;
 	cout << endl;
 	int swapTimes = len;
+	Sleep(1000);
 	cout << "Enter a sequence:" << endl;
 	for (int i = 0; i < len; i++)
 	{
@@ -25,12 +27,15 @@ int main()
 		seq.push_back(item);
 	}
 	cout << endl;
+	Sleep(1000);
 	cout << "Original sequence:" << endl;
 	for (auto i : seq)
 	{
 		cout << i << " ";
+		Sleep(1000);
 	}
 	cout << endl << endl;
+	Sleep(1000);
     srand(static_cast<unsigned int>(time(NULL)));
 	for (int i = 0; i < swapTimes; i++)
 	{
@@ -38,7 +43,9 @@ int main()
 		int item2 = 0 + rand() % len;
 		swap(seq[item1], seq[item2]);
 		cout << i + 1 << ". Swap item " << item1 + 1 << " and item " << item2 + 1 << "." << endl << endl;
+		Sleep(1000);
 	}
+	Sleep(1000);
 	cout << "What is the current sequence?" << endl;
 	for (int i = 0; i < len; i++)
 	{
@@ -47,6 +54,7 @@ int main()
 		ans.push_back(item);
 	}
 	cout << endl;
+	Sleep(1000);
 	if (ans == seq)
 	{
 		cout << "Bingo! You are right!" << endl;
@@ -56,10 +64,12 @@ int main()
 		cout << "Oh, no! You are wrong." << endl;
 	}
 	cout << endl;
+	Sleep(1000);
 	cout << "Current sequence:" << endl;
 	for (auto i : seq)
 	{
 		cout << i << " ";
+		Sleep(1000);
 	}
 	cout << endl;
 	return 0;
